@@ -1,0 +1,20 @@
+{
+  "name": "mongo-scraper",
+  "version": "1.0.0",
+  "description": "mongodb scraper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonboru/mongo-scraper.git"
+  },
+  "author": "Jason O'Brien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonboru/mongo-scraper/issues"
+  },
+  "homepage": "https://github.com/jasonboru/mongo-scraper#readme",
+  "keywords": []
+}
