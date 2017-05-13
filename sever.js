@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 // Requiring our Note and Article models
 var Note = require("./models/Note.js");
-var Article = require(".models/Article.js");
+var Article = require("./models/Article.js");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -35,7 +35,7 @@ db.once("open", function() {
 
 //set engine and default for handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine"), "handlebars");
+app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 var router = express.Router();
@@ -47,7 +47,7 @@ require("./config/routes")(router);
 app.use(router);
 
 //set port
-var port - process.env.PORT || 3001;
+var port = process.env.PORT || 3001;
 
 //setup listener
 app.listen(port, function() {

@@ -16,5 +16,11 @@
     "url": "https://github.com/jasonboru/mongo-scraper/issues"
   },
   "homepage": "https://github.com/jasonboru/mongo-scraper#readme",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.9.8"
+  }
 }
