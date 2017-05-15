@@ -22,5 +22,17 @@ $(document).ready(function() {
           location.reload();
       });
   });
+  $(".removeSaved").click(function() {
+      var articleToremoveSaved = {};
+      articleToremoveSaved.id = $(this).data("id");
+      articleToremoveSaved.saved = false;
+      $.ajax({
+          method: "PATCH",
+          url: "/api/articles",
+          data: articleToremoveSaved
+      }).then(function(data) {
+          location.reload();
+      });
+  });
 
 });
