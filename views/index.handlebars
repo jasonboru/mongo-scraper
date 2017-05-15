@@ -1,0 +1,17 @@
+<div class="articles">
+  <ul>
+    {{#each articles }}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{title}}</h3>
+      </div>
+      <div class="panel-body">
+        <a href={{link}}>{{link}}</a>
+        <button data-id={{_id}} class="btn btn-danger pull-right save-article">Save Article</button>
+      </div>
+    </div>
+    <br />
+    <br />
+    {{/each}}
+  </ul>
+</div>
