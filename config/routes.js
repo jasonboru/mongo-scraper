@@ -38,5 +38,26 @@ module.exports = function(router) {
       });
   });
 
+  //retrieves the saved articles
+  router.get("/saved", function(req, res) {
+
+      articlesController.get({saved: true}, function(data) {
+
+          var hbsObject = {
+            articles: data
+          };
+          res.render("saved", hbsObject);
+      });
+  });
+
+  //for saving or unsaving articles
+  router.patch("/api/articles", function(req, res) {
+
+      articlesController.update(req.body, function(err, data) {
+          //this gets sent back to app.js and the article is either saved or unsaved
+          res.json(data);
+      });
+  });
+
 
 };

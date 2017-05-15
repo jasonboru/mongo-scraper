@@ -18,5 +18,22 @@ module.exports = {
           callback(err, docs);
         });
     });
+  },
+  get: function(query, cb) {
+    //query is currently hardcoded to {saved: true}
+    Article.find(query)
+      .sort({
+        _id: -1
+      })
+      .exec(function(err, doc) {
+        //send saved articles back to routes to be rendered
+        cb(doc);
+      });
+  },
+  update: function(query, cb) {  
+    // saves or unsaves an article depending on the user query comes from the patch request in app.js
+    Article.update({ _id: query.id }, {
+      $set: {saved: query.saved}
+    }, {}, cb);
   }
 };
