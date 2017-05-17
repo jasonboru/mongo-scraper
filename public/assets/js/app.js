@@ -11,6 +11,19 @@ $(document).ready(function() {
       });
   });
 
+  $(".save-article").click(function() {
+      var articleToSave = {};
+      articleToSave.id = $(this).data("id");
+      articleToSave.saved = true;
+      $.ajax({
+          method: "PATCH",
+          url: "/api/articles",
+          data: articleToSave
+      }).then(function(data) {
+          location.reload();
+      });
+  });
+
   $(".removeSaved").click(function() {
       var articleToremoveSaved = {};
       articleToremoveSaved.id = $(this).data("id");
