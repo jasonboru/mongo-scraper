@@ -11,6 +11,7 @@ module.exports = {
       for (var i = 0; i < articlesArr.length; i++) {
         articlesArr[i].date = new Date();
         articlesArr[i].saved = false;
+        articlesArr[i].note = [];
       }
 
       //filters the duplicate articles because the article model says the title must be unique
@@ -38,7 +39,7 @@ module.exports = {
   },
   addNote: function(query, cb) {
     Article.findOneAndUpdate({_id: query.id }, {
-      $push: {notes: query.notes}
+      $push: {note: query.note}
     }, {}, cb);
   }
 };

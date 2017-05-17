@@ -60,12 +60,8 @@ module.exports = function(router) {
       });
   });
 
-  router.post("/articles/:id", function(req, res) {
+  /*router.post("/articles/:id", function(req, res) {
     // Create a new note and pass the req.body to the entry
-    console.log("**********************************************");
-  console.log("**********what is req.body on note post********")
-  console.log(req.body.body);
-    console.log("***********************************************");
     var newNote = new Note(req.body);
 
     // And save the new note the db
@@ -91,6 +87,43 @@ module.exports = function(router) {
         });
       }
     });
+  });*/
+
+  //retrieve the notes attached to saved articles to be displayed in the notes modal
+  router.get('/notes/:id', function (req, res) {
+      //Query to find the matching id to the passed in it
+      Article.findOne({_id: req.params.id})
+          .populate("note") //Populate all of the notes associated with it
+          .exec(function (error, doc) { //execute the query
+              if (error) console.log(error);
+              // Otherwise, send the doc to the browser as a json object
+              else {
+                  res.json(doc);
+              }
+          });
+  });
+
+  // Add a note to a saved article
+  router.post('/notes/:id', function (req, res) {
+    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+    console.log(req.params.id);
+    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+      //create a new note with req.body
+      var newNote = new Note(req.body);
+      //save newNote to the db
+      newNote.save(function (err, doc) {
+          // Log any errors
+          if (err) console.log(err);
+          //find and update the note
+          Article.findOneAndUpdate(
+              {_id: req.params.id}, // find the _id by req.params.id
+              {$push: {note: doc._id}}, //push to the notes array
+              {new: true},
+              function(err, newdoc){
+                  if (err) console.log(err);
+                  res.send(newdoc);
+          });
+      });
   });
 
 };
