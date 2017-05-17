@@ -43,7 +43,6 @@ module.exports = function(router) {
   router.get("/saved", function(req, res) {
 
       articlesController.get({saved: true}, function(data) {
-
           var hbsObject = {
             articles: data
           };
@@ -123,6 +122,13 @@ module.exports = function(router) {
                   if (err) console.log(err);
                   res.send(newdoc);
           });
+      });
+  });
+
+  router.get('/deleteNote/:id', function(req, res){
+      Note.remove({"_id": req.params.id}, function(err, newdoc){
+          if(err) console.log(err);
+          res.redirect('/saved'); //redirect to reload the page
       });
   });
 
