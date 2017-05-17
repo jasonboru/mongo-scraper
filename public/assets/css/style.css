@@ -1,0 +1,45 @@
+body {
+	background-image: url(../img/nyt-newsprint.jpg);
+	background-position: center;
+}
+
+.btn-danger {
+  background-color: #722b2b;
+  border-color: #722b2b;
+}
+
+.btn-danger:hover {
+  background-color: #764747;
+  border-color: #764747;
+}
+
+.panel-default>.panel-heading {
+  background-color: #3f3535;
+  color: #fff;
+}
+
+.panel-default {
+  border-color: #3f3535;
+}
+
+.artLink {
+  color: #722b2b;
+}
+
+.saved-buttons {
+  margin-right: 1em;
+}
+
+.noteText {
+  color: #722b2b;
+}
+
+.deletex {
+  color: #722b2b;
+}
+
+.modal-body{
+	background-image: url(../img/nyt-modal-background.jpg);
+	background-size: cover;
+	background-position: center;
+}

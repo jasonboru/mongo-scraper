@@ -68,8 +68,8 @@ $(document).ready(function() {
           $('#noteModalLabel').append(' ' + thisId);
           //add notes to body of modal, will loop through if multiple notes
           for(var i = 0; i<data.note.length; i++) {
-              var button = ' <a href=/deleteNote/' + data.note[i]._id + '><button type="button" class="btn btn-danger">Delete</button></a>';
-              $('#notesBody').append('<li>' + data.note[i].body + '  ' + button + '</li>');
+              var button = ' <a href=/deleteNote/' + data.note[i]._id + '><i class="pull-right fa fa-times fa-2x deletex" aria-hidden="true"></i></a>';
+              $('#notesBody').append('<div class="panel panel-default"><div class="noteText panel-body">' + data.note[i].body + '  ' + button + '</div></div>');
           }
       });
   });
