@@ -30,10 +30,15 @@ module.exports = {
         cb(doc);
       });
   },
-  update: function(query, cb) {  
+  update: function(query, cb) {
     // saves or unsaves an article depending on the user query comes from the patch request in app.js
     Article.update({ _id: query.id }, {
       $set: {saved: query.saved}
+    }, {}, cb);
+  },
+  addNote: function(query, cb) {
+    Article.findOneAndUpdate({_id: query.id }, {
+      $push: {notes: query.notes}
     }, {}, cb);
   }
 };
