@@ -11,7 +11,7 @@
 
     		      <button data-id={{_id}} class="btn btn-danger pull-right removeSaved">Remove from Saved</button>
 
-              <button data-id={{_id}} class="btn btn-primary pull-right saved-buttons"  id="addCheckNote" data-toggle="modal" data-target="#noteModal">View/Add Notes</button>
+              <button data-id={{_id}} class="btn btn-primary pull-right saved-buttons"  id="addCheckNote" data-toggle="modal" data-target="#noteModal" data-value="{{this._id}}">View/Add Notes</button>
     		  </div>
     		</div>
     		<br />
@@ -24,7 +24,7 @@
               <div class="modal-content">
                   <div class="modal-header">
                       <!--title including the id of the current article-->
-                      <h4 class="modal-title" id=""><b>Notes for:</b> {{title}}</h4>
+                      <h4 class="modal-title" id=""><b>Notes:</b></h4>
                       <!--where notes will be displayed-->
                       <div>
                           <ul id="notesBody">

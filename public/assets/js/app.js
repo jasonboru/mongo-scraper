@@ -49,7 +49,7 @@ $(document).ready(function() {
 
   $('.saved-buttons').on('click',  function () {
       // the NEWS article id
-      var thisId = $(this).data("id");
+      var thisId = $(this).attr("data-value");
 
       //attach news article _id to the save button in the modal for use in save post
       $("#saveButton").attr({"data-value": thisId});
@@ -77,7 +77,7 @@ $(document).ready(function() {
 // When you click the savenote button
   $(".savenote").click(function() {
   // Grab the id associated with the article from the submit button
-    var thisId = $(this).data("id");
+    var thisId = $(this).attr("data-value");
 
 
   // Run a POST request to change the note, using what's entered in the inputs
