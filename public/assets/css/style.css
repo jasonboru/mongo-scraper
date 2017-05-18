@@ -1,6 +1,11 @@
 body {
 	background-image: url(../img/nyt-newsprint.jpg);
 	background-position: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Roboto Slab', serif;
 }
 
 .btn-danger {
@@ -48,4 +53,15 @@ body {
 	color: #fff;
 	background-color: #722b2b;
 	border-color: #722b2b;
+}
+
+.main-img {
+	margin-bottom: 2em;
+	border-top: 2px solid #3f3535;
+	border-bottom: 2px solid #3f3535;
+}
+
+.savedArt {
+	margin: 0 auto;
+	width: 80%;
 }
