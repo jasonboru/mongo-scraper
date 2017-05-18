@@ -43,3 +43,9 @@ body {
 	background-size: cover;
 	background-position: center;
 }
+
+.alert-warning {
+	color: #fff;
+	background-color: #722b2b;
+	border-color: #722b2b;
+}
