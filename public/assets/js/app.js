@@ -15,9 +15,11 @@ $(document).ready(function() {
       $.get("/api/fetch").then(function(data) {
           $(".articles").remove();
           $.get("/").then(function(){
-              bootbox.alert("<h3 class='text-center m-top-80'>" + data.message + "<h3>");
-              location.reload();
+              bootbox.alert("<h3 class='text-center m-top-80'>" + data.message + "<h3>", function(result) {
+                location.reload()
+              });
           });
+          //location.reload();
       });
   });
 
